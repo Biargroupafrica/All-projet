@@ -1,0 +1,306 @@
+:root {
+  --bg: #f6f4f3;
+  --card-bg: #f3f1f0;
+  --border: #d6d3d1;
+  --text: #0a143f;
+  --muted: #6f7277;
+  --primary: #ea6436;
+  --primary-soft: #ef7e57;
+  --promo-bg: #f07f52;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+}
+
+.left-panel {
+  padding: 28px 52px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.language-pill {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 13px;
+  border-radius: 12px;
+  border: 1px solid #cfccca;
+  background: #fff;
+  font-weight: 600;
+  font-size: 12px;
+  box-shadow: 0 3px 12px rgba(33, 33, 33, 0.08);
+}
+
+.language-close {
+  color: #7a7a7a;
+}
+
+.form-content {
+  width: min(100%, 460px);
+  margin-top: 36px;
+}
+
+.brand-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(234, 100, 54, 0.4);
+}
+
+.heading {
+  margin-top: 22px;
+}
+
+.heading h1 {
+  margin: 0;
+  font-size: 39px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+}
+
+.heading p {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.login-card {
+  margin-top: 28px;
+  padding: 28px 24px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: #f7f5f4;
+  display: grid;
+  gap: 20px;
+}
+
+.field-group {
+  display: grid;
+  gap: 8px;
+}
+
+.field-label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.input-shell {
+  border-radius: 12px;
+  background: var(--primary);
+  border: 1px solid transparent;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  color: #f6d4c9;
+}
+
+.input-shell input {
+  width: 100%;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #fff5f0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input-shell input::placeholder {
+  color: #f4c2b1;
+}
+
+.visibility-toggle {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: #f4d8d0;
+  font-size: 15px;
+  padding: 0;
+}
+
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.remember-me {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.remember-me input {
+  accent-color: var(--primary);
+}
+
+.forgot-password {
+  color: var(--primary-soft);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.primary-action,
+.secondary-action {
+  border: 0;
+  border-radius: 12px;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary-action {
+  background: var(--primary);
+  color: #fff;
+}
+
+.primary-action:hover {
+  filter: brightness(0.96);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #9d9a98;
+  font-weight: 600;
+}
+
+.divider span {
+  height: 1px;
+  background: #d9d7d5;
+  flex: 1;
+}
+
+.divider p {
+  margin: 0;
+}
+
+.secondary-action {
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  color: #232323;
+}
+
+.right-panel {
+  position: relative;
+  background-color: var(--promo-bg);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+  background-size: 22px 22px;
+  padding: 76px 64px;
+}
+
+.promo-content {
+  width: min(100%, 520px);
+}
+
+.shield-icon {
+  font-size: 32px;
+  color: #fff;
+}
+
+.promo-content h2 {
+  margin: 12px 0 26px;
+  color: #fff;
+  font-size: 54px;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.benefits-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+.benefits-list li {
+  background: rgba(245, 196, 175, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  font-size: 26px;
+  color: #fff4ee;
+  font-weight: 500;
+}
+
+@media (max-width: 1260px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .right-panel {
+    padding: 48px 30px 56px;
+  }
+
+  .promo-content h2 {
+    font-size: 42px;
+  }
+
+  .benefits-list li {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 720px) {
+  .left-panel {
+    padding: 22px 18px 34px;
+  }
+
+  .form-content {
+    margin-top: 20px;
+  }
+
+  .heading h1 {
+    font-size: 30px;
+  }
+
+  .heading p {
+    font-size: 14px;
+  }
+
+  .right-panel {
+    padding: 40px 18px 44px;
+  }
+
+  .promo-content h2 {
+    font-size: 34px;
+  }
+
+  .benefits-list li {
+    min-height: 50px;
+    font-size: 18px;
+  }
+}

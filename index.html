@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connexion à ACTOR Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="left-panel">
+        <div class="language-pill">
+          <span>FR Français</span>
+          <span class="language-close" aria-hidden="true">×</span>
+        </div>
+
+        <div class="form-content">
+          <div class="brand-icon" aria-hidden="true">📞</div>
+
+          <header class="heading">
+            <h1>Connexion à ACTOR Hub</h1>
+            <p>ACTOR Hub est une plateforme de Actor Hub</p>
+          </header>
+
+          <form class="login-card">
+            <label class="field-group" for="email">
+              <span class="field-label">Adresse email</span>
+              <span class="input-shell">
+                <span aria-hidden="true">✉️</span>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="exemple@email.com"
+                  autocomplete="email"
+                />
+              </span>
+            </label>
+
+            <label class="field-group" for="password">
+              <span class="field-label">Mot de passe</span>
+              <span class="input-shell">
+                <span aria-hidden="true">🔒</span>
+                <input
+                  id="password"
+                  type="password"
+                  placeholder="••••••••"
+                  autocomplete="current-password"
+                />
+                <button
+                  class="visibility-toggle"
+                  type="button"
+                  aria-label="Afficher ou masquer le mot de passe"
+                >
+                  👁️
+                </button>
+              </span>
+            </label>
+
+            <div class="form-options">
+              <label class="remember-me">
+                <input type="checkbox" />
+                <span>Se souvenir de moi</span>
+              </label>
+              <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+            </div>
+
+            <button type="submit" class="primary-action">Se connecter</button>
+
+            <div class="divider" aria-hidden="true">
+              <span></span>
+              <p>OU</p>
+              <span></span>
+            </div>
+
+            <button type="button" class="secondary-action">
+              Se connecter avec Google
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section class="right-panel">
+        <div class="promo-content">
+          <div class="shield-icon" aria-hidden="true">🛡️</div>
+          <h2>Pourquoi ACTOR Hub ?</h2>
+          <ul class="benefits-list">
+            <li>📞 Centre d'appels cloud complet</li>
+            <li>🧾 SMS Bulk &amp; Marketing</li>
+            <li>💬 WhatsApp Business intégré</li>
+            <li>📧 Email Marketing professionnel</li>
+            <li>🌍 Support multi-langue (10 langues)</li>
+            <li>🔐 Sécurité &amp; conformité RGPD</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const passwordInput = document.querySelector("#password");
+      const toggleButton = document.querySelector(".visibility-toggle");
+
+      toggleButton?.addEventListener("click", () => {
+        const showingPassword = passwordInput.type === "text";
+        passwordInput.type = showingPassword ? "password" : "text";
+      });
+    </script>
+  </body>
+</html>
