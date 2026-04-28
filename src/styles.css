@@ -322,6 +322,26 @@ a {
   font-weight: 700;
 }
 
+.form-feedback {
+  margin-top: 16px;
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.form-feedback.success {
+  background: #eefbf4;
+  color: #1f7a46;
+  border: 1px solid rgba(31, 122, 70, 0.16);
+}
+
+.form-feedback.error {
+  background: #fff2ee;
+  color: #c4512a;
+  border: 1px solid rgba(196, 81, 42, 0.14);
+}
+
 .feature-panel {
   position: relative;
   overflow: hidden;

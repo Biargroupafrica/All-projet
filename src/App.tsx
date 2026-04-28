@@ -28,6 +28,10 @@ type Translation = {
   continueMicrosoft: string;
   benefitsTitle: string;
   benefits: string[];
+  signupPrompt: string;
+  signupLink: string;
+  successMessage: string;
+  errorMessage: string;
 };
 
 const translations: Record<LanguageCode, Translation> = {
@@ -52,6 +56,10 @@ const translations: Record<LanguageCode, Translation> = {
       "Support multi-langue (10 langues)",
       "Sécurité & conformité RGPD",
     ],
+    signupPrompt: "Vous n'avez pas de compte ?",
+    signupLink: "Créer un compte",
+    successMessage: "Connexion simulée réussie pour",
+    errorMessage: "Veuillez renseigner votre email et votre mot de passe.",
   },
   en: {
     languageLabel: "EN English",
@@ -74,6 +82,10 @@ const translations: Record<LanguageCode, Translation> = {
       "Multi-language support (10 languages)",
       "Security & GDPR compliance",
     ],
+    signupPrompt: "Don't have an account?",
+    signupLink: "Create an account",
+    successMessage: "Simulated login successful for",
+    errorMessage: "Please enter your email and password.",
   },
   es: {
     languageLabel: "ES Español",
@@ -96,6 +108,10 @@ const translations: Record<LanguageCode, Translation> = {
       "Soporte multilingüe (10 idiomas)",
       "Seguridad y cumplimiento RGPD",
     ],
+    signupPrompt: "¿No tienes una cuenta?",
+    signupLink: "Crear una cuenta",
+    successMessage: "Conexión simulada correcta para",
+    errorMessage: "Completa tu correo y contraseña.",
   },
   ar: {
     languageLabel: "AR العربية",
@@ -118,6 +134,10 @@ const translations: Record<LanguageCode, Translation> = {
       "دعم متعدد اللغات (10 لغات)",
       "الأمان والامتثال للائحة RGPD",
     ],
+    signupPrompt: "ليس لديك حساب؟",
+    signupLink: "إنشاء حساب",
+    successMessage: "تم تسجيل الدخول التجريبي للحساب",
+    errorMessage: "يرجى إدخال البريد الإلكتروني وكلمة المرور.",
   },
 };
 
@@ -135,17 +155,21 @@ function App() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [feedback, setFeedback] = useState<{ tone: "success" | "error"; text: string } | null>(
+    null,
+  );
 
   const t = useMemo(() => translations[language], [language]);
   const isRtl = language === "ar";
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    window.alert(
-      email && password
-        ? `${t.submit} : ${email}`
-        : "Veuillez renseigner votre email et votre mot de passe.",
-    );
+    if (email && password) {
+      setFeedback({ tone: "success", text: `${t.successMessage} ${email}` });
+      return;
+    }
+
+    setFeedback({ tone: "error", text: t.errorMessage });
   };
 
   return (
@@ -234,6 +258,12 @@ function App() {
                   {t.submit}
                 </button>
 
+                {feedback ? (
+                  <p className={`feedback-banner ${feedback.tone}`} role="status" aria-live="polite">
+                    {feedback.text}
+                  </p>
+                ) : null}
+
                 <div className="divider" aria-hidden="true">
                   <span>{t.or}</span>
                 </div>
@@ -250,7 +280,7 @@ function App() {
                 </div>
 
                 <p className="signup-copy">
-                  Vous n'avez pas de compte ? <a href="#signup">Créer un compte</a>
+                  {t.signupPrompt} <a href="#signup">{t.signupLink}</a>
                 </p>
               </form>
             </section>
