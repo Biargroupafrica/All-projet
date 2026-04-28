@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connexion - ACTOR Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="layout">
+    <section class="left-panel">
+      <div class="language-pill">
+        <span>FR Français</span>
+        <span class="close">×</span>
+      </div>
+
+      <div class="login-card">
+        <div class="logo-circle">📞</div>
+        <h1>Connexion à ACTOR Hub</h1>
+        <p class="subtitle">ACTOR Hub est une plateforme de Actor Hub</p>
+
+        <form class="form-box">
+          <label for="email">Adresse email</label>
+          <div class="input-row">
+            <span class="icon">✉️</span>
+            <input id="email" type="email" placeholder="exemple@email.com" />
+          </div>
+
+          <label for="password">Mot de passe</label>
+          <div class="input-row">
+            <span class="icon">🔒</span>
+            <input id="password" type="password" value="password" />
+            <button class="eye" type="button" aria-label="Voir le mot de passe">👁️</button>
+          </div>
+
+          <div class="options-row">
+            <label class="remember"><input type="checkbox" /> Se souvenir de moi</label>
+            <a href="#">Mot de passe oublié ?</a>
+          </div>
+
+          <button type="submit" class="btn-primary">Se connecter</button>
+
+          <div class="separator"><span>OU</span></div>
+          <button type="button" class="btn-secondary">Continuer avec Google</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="right-panel">
+      <div class="why-card">
+        <div class="shield">🛡️</div>
+        <h2>Pourquoi ACTOR Hub ?</h2>
+        <ul>
+          <li>Centre d'appels cloud complet</li>
+          <li>SMS Bulk &amp; Marketing</li>
+          <li>WhatsApp Business intégré</li>
+          <li>Email Marketing professionnel</li>
+          <li>Support multi-langue (10 langues)</li>
+          <li>Sécurité &amp; conformité RGPD</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,264 @@
+:root {
+  --orange: #ea6736;
+  --orange-dark: #e85f2f;
+  --orange-soft: #f2845b;
+  --navy: #0a1444;
+  --text: #25324d;
+  --muted: #6f7687;
+  --panel-bg: #fff8f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  background: #f7f7f7;
+}
+
+.layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+}
+
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 24px;
+}
+
+.language-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #d7dbe3;
+  border-radius: 14px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #303b59;
+}
+
+.language-pill .close {
+  font-size: 14px;
+  color: #8e95a8;
+}
+
+.login-card {
+  width: min(500px, 100%);
+  text-align: left;
+}
+
+.logo-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: var(--orange);
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-size: clamp(32px, 2.4vw, 40px);
+  line-height: 1.12;
+  color: var(--navy);
+  margin: 0;
+}
+
+.subtitle {
+  margin-top: 10px;
+  margin-bottom: 22px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.form-box {
+  border: 1px solid #d6dbe6;
+  border-radius: 16px;
+  padding: 22px;
+  background: #fff;
+}
+
+.form-box label {
+  display: block;
+  font-weight: 600;
+  color: #2f3854;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 48px;
+  border-radius: 10px;
+  background: var(--orange);
+  color: #fff;
+  padding: 0 12px;
+  margin-bottom: 16px;
+}
+
+.input-row input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+  color: #fff;
+  background: transparent;
+}
+
+.input-row input::placeholder {
+  color: #ffd8ca;
+}
+
+.eye {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.options-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+  margin-bottom: 16px;
+  font-size: 13px;
+}
+
+.remember {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-weight: 500 !important;
+}
+
+.options-row a {
+  text-decoration: none;
+  color: #e97a57;
+  font-weight: 500;
+}
+
+.btn-primary,
+.btn-secondary {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  height: 46px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--orange-dark);
+}
+
+.btn-secondary {
+  margin-top: 12px;
+  border: 1px solid #d4d9e4;
+  background: #fff;
+  color: #49516b;
+}
+
+.separator {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 10px;
+  color: #9aa1b1;
+  margin-top: 14px;
+  font-size: 13px;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  height: 1px;
+  background: #e5e8ef;
+}
+
+.right-panel {
+  background: var(--orange);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px;
+}
+
+.right-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  background-size: 22px 22px;
+  opacity: 0.5;
+}
+
+.why-card {
+  position: relative;
+  z-index: 1;
+  width: min(520px, 100%);
+  color: #fff;
+}
+
+.shield {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin: 0 0 18px;
+  font-size: clamp(30px, 2.3vw, 42px);
+  line-height: 1.1;
+}
+
+.why-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.why-card li {
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .right-panel {
+    min-height: 46vh;
+  }
+}
