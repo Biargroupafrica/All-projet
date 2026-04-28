@@ -41,6 +41,8 @@ const copy = {
     microsoft: "Continuer avec Microsoft",
     account: "Vous n'avez pas de compte ?",
     signup: "Créer un compte",
+    success: "Connexion simulée avec succès.",
+    error: "Veuillez remplir l'adresse email et le mot de passe.",
     why: "Pourquoi ACTOR Hub ?",
     heroItems: [
       ["phone", "Centre d'appels cloud complet"],
@@ -64,6 +66,8 @@ const copy = {
     microsoft: "Continue with Microsoft",
     account: "Don't have an account?",
     signup: "Create account",
+    success: "Demo sign-in completed successfully.",
+    error: "Please fill in the email address and password.",
     why: "Why ACTOR Hub?",
     heroItems: [
       ["phone", "Complete cloud call center"],
@@ -87,6 +91,8 @@ const copy = {
     microsoft: "Continuar con Microsoft",
     account: "¿No tienes una cuenta?",
     signup: "Crear cuenta",
+    success: "Inicio de sesión de demostración validado.",
+    error: "Introduce el correo electrónico y la contraseña.",
     why: "¿Por qué ACTOR Hub?",
     heroItems: [
       ["phone", "Centro de llamadas cloud completo"],
@@ -110,6 +116,8 @@ const copy = {
     microsoft: "المتابعة عبر Microsoft",
     account: "ليس لديك حساب؟",
     signup: "إنشاء حساب",
+    success: "تم تسجيل الدخول التجريبي بنجاح.",
+    error: "يرجى ملء البريد الإلكتروني وكلمة المرور.",
     why: "لماذا ACTOR Hub؟",
     heroItems: [
       ["phone", "مركز اتصال سحابي كامل"],
@@ -152,11 +160,7 @@ export default function App() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setMessage(
-      email && password
-        ? "Connexion simulée avec succès."
-        : "Veuillez remplir l'adresse email et le mot de passe.",
-    );
+    setMessage(email && password ? t.success : t.error);
   }
 
   return (
